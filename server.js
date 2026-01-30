@@ -1,14 +1,20 @@
 import express from "express";
+import cors from "cors";
 import { collectMetrics } from "./metric.js";
 import { storeMetric, getHistory } from "./storage.js";
 
 const app = express();
 const PORT = 4000;
 
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
+
 setInterval(() => {
   const metric = collectMetrics();
   if (!metric) return;
-
   storeMetric(metric);
 }, 1000);
 
@@ -19,9 +25,7 @@ app.get("/api/current", (req, res) => {
 });
 
 app.get("/api/history/:window", (req, res) => {
-  const { window } = req.params;
-  const data = getHistory(window);
-
+  const data = getHistory(req.params.window);
   if (!data) {
     return res.status(400).json({ error: "Invalid window" });
   }
