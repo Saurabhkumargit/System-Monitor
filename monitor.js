@@ -1,5 +1,6 @@
 import { collectMetrics } from "./metric.js";
 import { storeMetric, getHistory } from "./storage.js";
+import { checkCpuAlert } from "./alert.js";
 
 console.log("Monitor script started");
 
@@ -8,6 +9,7 @@ setInterval(() => {
   if (!metric) return;
 
   storeMetric(metric);
+  checkCpuAlert(metric.cpu);
 
   const oneMinCount = getHistory("1m").length;
 
