@@ -1,6 +1,13 @@
 # System Monitor & Health Dashboard
 
+![Node.js](https://img.shields.io/badge/Node.js-18+-green)
+![Dockerized](https://img.shields.io/badge/Docker-Ready-blue)
+![Platform](https://img.shields.io/badge/Platform-Linux-lightgrey)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
 A Linux-based system monitoring tool that collects CPU, memory, and load metrics, stores recent history, triggers alerts, and visualizes system health in real time.
+
 
 ## Demo
 
