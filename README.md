@@ -2,6 +2,10 @@
 
 A Linux-based system monitoring tool that collects CPU, memory, and load metrics, stores recent history, triggers alerts, and visualizes system health in real time.
 
+## Demo
+
+![System Monitor Dashboard Demo](demo/demo.png)
+
 ## Why this project?
 
 This project was built to demonstrate:
